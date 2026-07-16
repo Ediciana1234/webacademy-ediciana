@@ -1,1 +1,21 @@
+name: Atividade 02.3 - Utilizando variáveis
+on:
+  push:
 
+env:
+  CURSO: "Integração Contínua"
+
+jobs:
+  exibe-informacoes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+      - name: Exibe o nome do curso
+        run: echo "Nome do curso - ${{ env.CURSO }}"
+      - name: Exibe o usuário que executou o workflow
+        run: echo "Usuário - ${{ github.actor }}"
+      - name: Exibe o nome do repositório
+        run: echo "Repositório - ${{ github.repository }}"
+      - name: Exibe a branch utilizada
+        run: echo "Branch - ${{ github.ref_name }}"
