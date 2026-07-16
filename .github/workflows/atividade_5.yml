@@ -1,1 +1,33 @@
+name: Atividade 02.5 
+on:
+  push:
 
+jobs:
+  # JOB 1
+  job1-informacoes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Exibe a data
+        run: date
+
+      - name: Exibe a versão do Git
+        run: git --version
+
+  # JOB 2
+  job2-validacao:
+    runs-on: ubuntu-latest
+    needs: job1-informacoes 
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+      - name: Verifica se existe o README.md
+        run: ls README.md
+
+      - name: Verifica se existe o LICENSE
+        run: ls LICENSE
+
+      - name: Verifica se existe o .gitignore
+        run: ls .gitignore
