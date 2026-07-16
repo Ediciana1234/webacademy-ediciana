@@ -1,1 +1,20 @@
+name: Atividade 02.2
+on:
+  push:
+jobs:
 
+  executa-comandos:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4 
+      - name: Exibe a data 
+        run: date
+      - name: Exibe o sistema operacional
+        run: uname -a
+      - name: Exibe a versão do Git
+        run: git --version
+      - name: Exibe  arquivo README.md
+        run: cat README.md
+      - name: Lista novamente os arquivos do projeto
+        run: ls -la
