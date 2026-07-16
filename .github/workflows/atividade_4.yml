@@ -1,1 +1,19 @@
+name: Atividade 02.4 
+on:
+  push:
 
+jobs:
+  valida-arquivos:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Verifica se existe o README.md
+        run: ls README.md
+
+      - name: Verifica se existe o LICENSE
+        run: ls LICENSE
+
+      - name: Verifica se existe o .gitignore
+        run: ls .gitignore
